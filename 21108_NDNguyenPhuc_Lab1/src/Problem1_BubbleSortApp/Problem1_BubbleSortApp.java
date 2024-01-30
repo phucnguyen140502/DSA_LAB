@@ -1,6 +1,8 @@
+package Problem1_BubbleSortApp;
+
 public class Problem1_BubbleSortApp {
 
-    static void bubbleSort(int[] arr) { // complexity is O(n(n-1) ==> O(n^2)
+    public static void bubbleSort(int[] arr) { // complexity is O(n(n-1) ==> O(n^2)
         int temp;
         int n = arr.length;
         int numSwaps = 0;
@@ -31,7 +33,7 @@ public class Problem1_BubbleSortApp {
         System.out.println();
     }
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         int[] A = new int[]{-1,6,3,0,5,3};
         printArray(A);
 

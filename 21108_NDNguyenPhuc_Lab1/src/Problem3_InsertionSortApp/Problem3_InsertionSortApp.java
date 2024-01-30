@@ -1,6 +1,8 @@
+package Problem3_InsertionSortApp;
+
 public class Problem3_InsertionSortApp {
 
-    static void insertionSort(int[] arr){
+    public static void insertionSort(int[] arr){
         int n = arr.length;
         int numSwaps = 0;
         int numComparisons = 0;
@@ -52,7 +54,7 @@ public class Problem3_InsertionSortApp {
         System.out.println();
     }
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         int[] arr =  new int[]{6,1,7,4,2,9,8,5,3};
         printArray(arr);
 

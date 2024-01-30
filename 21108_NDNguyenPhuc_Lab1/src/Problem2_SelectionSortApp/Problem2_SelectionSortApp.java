@@ -1,6 +1,8 @@
+package Problem2_SelectionSortApp;
+
 public class Problem2_SelectionSortApp {
 
-    static void selectionSort(int[] arr){ // complexity: O(n^2)
+    public static void selectionSort(int[] arr){ // complexity: O(n^2)
         int n = arr.length;
         int numSwaps = 0;
         int numComparisons = 0;
@@ -40,7 +42,7 @@ public class Problem2_SelectionSortApp {
         System.out.println();
     }
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         int[] arr = new int[]{1,9,8,2,7,3,6,4,5,9,10};
         printArray(arr);
 
