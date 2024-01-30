@@ -1,4 +1,4 @@
-public class SelectionSort {
+public class Problem2_SelectionSortApp {
 
     static void selectionSort(int[] arr){ // complexity: O(n^2)
         int n = arr.length;

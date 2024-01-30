@@ -1,4 +1,4 @@
-public class BubbleSort {
+public class Problem1_BubbleSortApp {
 
     static void bubbleSort(int[] arr) { // complexity is O(n(n-1) ==> O(n^2)
         int temp;
