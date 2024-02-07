@@ -192,6 +192,7 @@ public class DoublyLinkedListApp<T> implements ILInkedList<T> {
         doublyLinkedList.add(1);
         doublyLinkedList.add(2);
         doublyLinkedList.add(3);
+        doublyLinkedList.add(3);
         doublyLinkedList.traverse();
         System.out.println();
 //        System.out.println(doublyLinkedList.remove(2));
