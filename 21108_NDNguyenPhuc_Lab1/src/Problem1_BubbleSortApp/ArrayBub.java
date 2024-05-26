@@ -1,8 +1,22 @@
 package Problem1_BubbleSortApp;
 
 public class Problem1_BubbleSortApp {
+    private long[] arr;
+    private int nElems;
 
-    public static void bubbleSort(int[] arr) { // complexity is O(n(n-1) ==> O(n^2)
+    public Problem1_BubbleSortApp(long[] arr, int nElems) {
+        this.arr = arr;
+        this.nElems = nElems;
+    }
+
+    private void swap(int one, int two)
+    {
+        long temp = arr[one];
+        arr[one] = arr[two];
+        arr[two] = temp;
+    }
+
+    public void bubbleSort(int[] arr) { // complexity is O(n(n-1) ==> O(n^2)
         int temp;
         int n = arr.length;
         int numSwaps = 0;
@@ -25,7 +39,7 @@ public class Problem1_BubbleSortApp {
         System.out.println("The total number of comparisons: "+totalComparisons);
     }
 
-    static void printArray(int[] arr) {
+    static void display(int[] arr) {
 
         for (int j : arr) {
             System.out.print(j + " ");
@@ -34,13 +48,6 @@ public class Problem1_BubbleSortApp {
     }
 
     static void main(String[] args) {
-        int[] A = new int[]{-1,6,3,0,5,3};
-        printArray(A);
 
-
-        System.out.println("After use bubble sort");
-        bubbleSort(A);
-
-        printArray(A);
     }
 }
