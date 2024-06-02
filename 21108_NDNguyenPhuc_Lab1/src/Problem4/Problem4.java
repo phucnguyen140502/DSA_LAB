@@ -1,8 +1,9 @@
 package Problem4;
 
-import Problem1_BubbleSortApp.Problem1_BubbleSortApp;
-import Problem2_SelectionSortApp.Problem2_SelectionSortApp;
-import Problem3_InsertionSortApp.Problem3_InsertionSortApp;
+
+import Problem1_BubbleSortApp.ArrayBub;
+import Problem2_SelectionSortApp.ArraySel;
+import Problem3_InsertionSortApp.ArrayIns;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -12,33 +13,37 @@ public class Problem4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int[] randomArray1 = new int[n];  // Create an array with n elements
-        int[] randomArray2 = new int[n];  // Create an array with n elements
-        int[] randomArray3 = new int[n];  // Create an array with n elements
+        Random num = new Random();
 
-        Random random = new Random();      // Create a Random object for generating random numbers
+        ArrayBub bub = new ArrayBub(n);
+        ArraySel sel = new ArraySel(n);
+        ArrayIns ins = new ArrayIns(n);
 
-        // Fill the arrays with random integers
         for (int i = 0; i < n; i++) {
-            int randomNumber = random.nextInt();
-            randomArray1[i] = randomNumber;// Generate random integer and store it in the array
-            randomArray2[i] = randomNumber;
-            randomArray3[i] = randomNumber;
-
+            bub.insert(num.nextLong());
+            sel.insert(num.nextLong());
+            ins.insert(num.nextLong());
         }
+
+
         System.out.format("The sort array have %d elements %n",n);
         System.out.println("--------------------------");
-
+        bub.display();
+        sel.display();
+        ins.display();
         System.out.println("Bubble Sort");
-        Problem1_BubbleSortApp.bubbleSort(randomArray1);
+        bub.bubbleSort();
+        bub.display();
         System.out.println("--------------------------");
 
         System.out.println("Selection Sort");
-        Problem2_SelectionSortApp.selectionSort(randomArray2);
+        sel.selectionSort();
+        sel.display();
         System.out.println("--------------------------");
 
         System.out.println("Insertion Sort");
-        Problem3_InsertionSortApp.insertionSort(randomArray3);
+        ins.insertionSort();
+        ins.display();
         System.out.println("--------------------------");
 
     }

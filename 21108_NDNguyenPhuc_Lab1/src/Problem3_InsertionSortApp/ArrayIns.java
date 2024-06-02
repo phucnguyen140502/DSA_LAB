@@ -1,15 +1,29 @@
 package Problem3_InsertionSortApp;
 
-public class Problem3_InsertionSortApp {
+public class ArrayIns {
+    private long[] arr;                 // ref to array a
+    private int nElems;               // number of data items
+    //--------------------------------------------------------------
+    public ArrayIns(int max)          // constructor
+    {
+        arr = new long[max];                 // create the array
+        nElems = 0;                        // no items yet
+    }
+    //--------------------------------------------------------------
+    public void insert(long value)    // put element into array
+    {
+        arr[nElems] = value;             // insert it
+        nElems++;                      // increment size
+    }
 
-    public static void insertionSort(int[] arr){
-        int n = arr.length;
+    public void insertionSort(){
+
         int numSwaps = 0;
         int numComparisons = 0;
         int totalComparisons = 0;
 
-        for (int i = 1; i < n; i++) {
-            int temp = arr[i];
+        for (int i = 1; i < nElems; i++) {
+            long temp = arr[i];
 
             // use while loop
             int j = i - 1;
@@ -23,6 +37,15 @@ public class Problem3_InsertionSortApp {
                 }
                 j = j - 1;
             }
+
+//            int j = i - 1;
+//            while (j >= 0 && temp < arr[j]){
+//                totalComparisons++;
+//                    arr[j+1] = arr[j];
+//                    j = j - 1;
+//                }
+
+
 
             // use for loop
 //            int k = -1;
@@ -46,21 +69,12 @@ public class Problem3_InsertionSortApp {
 
     }
 
-    static void printArray(int[] arr) {
+    public void display() {
 
-        for (int j : arr) {
+        for (long j : arr) {
             System.out.print(j + " ");
         }
         System.out.println();
     }
 
-    static void main(String[] args) {
-        int[] arr =  new int[]{6,1,7,4,2,9,8,5,3};
-        printArray(arr);
-
-        System.out.println("After use insertion sort");
-        insertionSort(arr);
-
-        printArray(arr);
-    }
 }

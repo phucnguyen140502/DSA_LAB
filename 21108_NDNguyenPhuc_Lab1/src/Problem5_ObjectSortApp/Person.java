@@ -1,18 +1,15 @@
 package Problem5_ObjectSortApp;
 
 
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class Person {
     private String firstName;
     private String lastName;
-    private int grade;
+    private int age;
 
-    public Person(String firstName, String lastName, int grade) {
+    public Person(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.grade = grade;
+        this.age = age;
     }
 
     public String getFirstName() {
@@ -31,12 +28,12 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public int getGrade() {
-        return grade;
+    public int getAge() {
+        return age;
     }
 
-    public void setGrade(int grade) {
-        this.grade = grade;
+    public void setAge(int age) {
+        this.age = age;
     }
 
 
@@ -45,7 +42,7 @@ public class Person {
         return "Student{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", grade=" + grade +
+                ", age=" + age +
                 '}';
     }
 

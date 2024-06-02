@@ -1,12 +1,17 @@
 package Problem1_BubbleSortApp;
 
-public class Problem1_BubbleSortApp {
+public class ArrayBub {
     private long[] arr;
     private int nElems;
 
-    public Problem1_BubbleSortApp(long[] arr, int nElems) {
-        this.arr = arr;
-        this.nElems = nElems;
+    public ArrayBub(int max) {
+        arr = new long[max];
+        nElems = 0;
+    }
+    public void insert(long value)    // put element into array
+    {
+        arr[nElems] = value;             // insert it
+        nElems++;                      // increment size
     }
 
     private void swap(int one, int two)
@@ -16,20 +21,17 @@ public class Problem1_BubbleSortApp {
         arr[two] = temp;
     }
 
-    public void bubbleSort(int[] arr) { // complexity is O(n(n-1) ==> O(n^2)
-        int temp;
-        int n = arr.length;
+    public void bubbleSort() { // complexity is O(n(n-1) ==> O(n^2)
+
         int numSwaps = 0;
         int numComparisons = 0;
         int totalComparisons = 0;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i -1; j++) {
+        for (int i = 0; i < nElems - 1; i++) {
+            for (int j = 0; j < nElems - i -1; j++) {
                 totalComparisons++;
                 if (arr[j] > arr[j + 1]) {
                     numComparisons++;
-                    temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
+                    swap(j,j+1);
                     numSwaps++;
                 }
             }
@@ -39,15 +41,12 @@ public class Problem1_BubbleSortApp {
         System.out.println("The total number of comparisons: "+totalComparisons);
     }
 
-    static void display(int[] arr) {
+    public void display() {
 
-        for (int j : arr) {
+        for (long j : arr) {
             System.out.print(j + " ");
         }
         System.out.println();
     }
 
-    static void main(String[] args) {
-
-    }
 }

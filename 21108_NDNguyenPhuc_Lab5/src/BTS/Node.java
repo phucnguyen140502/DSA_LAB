@@ -13,13 +13,13 @@ public class Node {
     }
 
     public void addToNode(int x){
-        if (x < data) {
+        if (x < data) { // left
             if (left == null) {
                 left = new Node(x);
             }else{
                 left.addToNode(x);
             }
-        } else if (x > data) {
+        } else if (x > data) { // right
             if (right == null) {
                 right = new Node(x);
             }else {
@@ -69,10 +69,6 @@ public class Node {
         }
         return root;
     }
-
-
-
-
 
     public int getData() {
         return data;
@@ -239,7 +235,5 @@ public class Node {
             return this;
         }
     }
-
-
 
 }

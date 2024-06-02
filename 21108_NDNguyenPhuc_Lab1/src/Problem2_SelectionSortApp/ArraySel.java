@@ -1,17 +1,28 @@
 package Problem2_SelectionSortApp;
 
-public class Problem2_SelectionSortApp {
+public class ArraySel {
+    private long[] arr;
+    private int nElems;
 
-    public static void selectionSort(int[] arr){ // complexity: O(n^2)
-        int n = arr.length;
+    public ArraySel(int max) {
+        arr = new long[max];
+        nElems = 0;
+    }
+    public void insert(long value)    // put element into array
+    {
+        arr[nElems] = value;             // insert it
+        nElems++;                      // increment size
+    }
+
+    public void selectionSort(){ // complexity: O(n^2)
         int numSwaps = 0;
         int numComparisons = 0;
         int totalComparisons = 0;
-        for (int i = 0; i < n - 1; i++) {
-            int min = arr[i];
+        for (int i = 0; i < nElems - 1; i++) {
+            long min = arr[i];
             int minIndex = i;
-            int temp = arr[i];
-            for (int j = i; j < n; j++) {
+            long temp = arr[i];
+            for (int j = i; j < nElems; j++) {
                 totalComparisons++;
                 if (min > arr[j]) {
                     numComparisons++;
@@ -33,23 +44,13 @@ public class Problem2_SelectionSortApp {
         System.out.println("The number of comparisons after inner loop: "+ numComparisons);
         System.out.println("The total number of comparisons: "+ totalComparisons);
     }
+        public void display() {
 
-    static void printArray(int[] arr) {
-
-        for (int j : arr) {
+        for (long j : arr) {
             System.out.print(j + " ");
         }
         System.out.println();
     }
 
-    static void main(String[] args) {
-        int[] arr = new int[]{1,9,8,2,7,3,6,4,5,9,10};
-        printArray(arr);
 
-        System.out.println("After use selection sort");
-        selectionSort(arr);
-
-
-        printArray(arr);
-    }
 }

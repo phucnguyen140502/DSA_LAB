@@ -187,6 +187,8 @@ public class DoublyLinkedListApp<T> implements ILInkedList<T> {
         return indexOf(element) != -1;
     }
 
+
+
     public static void main(String[] args) {
         DoublyLinkedListApp<Integer> doublyLinkedList = new DoublyLinkedListApp<>();
         doublyLinkedList.add(1);
