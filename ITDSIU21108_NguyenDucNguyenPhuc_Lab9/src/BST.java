@@ -7,6 +7,7 @@ class BST {
     class Node {
         int data;
         Node left, right;
+
         public Node(int item) {
             data = item;
             left = right = null;
@@ -83,9 +84,9 @@ class BST {
             Node node = queue.remove();
             result.add(node.data);
 
-            if (node.left!= null)
+            if (node.left != null)
                 queue.add(node.left);
-            if (node.right!= null)
+            if (node.right != null)
                 queue.add(node.right);
         }
 

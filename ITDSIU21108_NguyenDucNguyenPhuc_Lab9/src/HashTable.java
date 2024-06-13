@@ -10,8 +10,8 @@ class HashTable {
         }
     }
 
-    private final int TABLE_SIZE = 10;
-    private final LinkedList<Entry>[] table;
+    private int TABLE_SIZE = 10;
+    private LinkedList<Entry>[] table;
 
     // Constructor
     public HashTable() {
@@ -21,8 +21,7 @@ class HashTable {
         }
     }
 
-    // handle collisions
-    private int hashFunction(int key) {
+    private int hashFunction(int key){
         return key % TABLE_SIZE;
     }
 
@@ -71,8 +70,6 @@ class HashTable {
             System.out.println();
         }
     }
-
-
 
     public static void main(String[] args) {
         HashTable hashTable = new HashTable();
